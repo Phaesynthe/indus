@@ -1,0 +1,21 @@
+{
+	"author": "Matthew Jackson <mwj8410@gmail.com>",
+	"dependencies": {
+	},
+	"description": "Provides Sass utilities and structures for common style needs",
+	"devDependencies": {
+		"eslint": "2.11.1",
+		"istanbul": "^0.4.2",
+		"mocha": "^2.4.5"
+	},
+	"main": "",
+	"name": "Indus",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/Phaesynthe/indus.git"
+	},
+	"scripts": {
+		"eslint": "eslint"
+	},
+	"version": "0.0.0"
+}
