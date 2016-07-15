@@ -7,8 +7,10 @@ module.exports = {
   },
   "extends": "eslint:recommended",
   "globals": {
-    "define": false,
-  	"angular": false
+  	"angular": false,
+  	"define": false,
+  	"describe": true,
+  	"it": true
 	},
   "rules": {
     "indent": [
