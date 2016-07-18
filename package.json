@@ -2,7 +2,7 @@
 	"author": "Matthew Jackson <mwj8410@gmail.com>",
 	"dependencies": {
 	},
-	"description": "Provides Sass utilities and structures for common style needs",
+	"description": "Provides base functionality for future project.",
 	"devDependencies": {
 		"eslint": "2.11.1",
 		"expect": "^1.14.0",
@@ -16,7 +16,7 @@
 		"url" : "https://github.com/Phaesynthe/indus.git"
 	},
 	"scripts": {
-	  "coverage": "istanbul cover _mocha -- -u exports -R spec app/app.spec.js",
+	  "coverage": "istanbul cover _mocha app/*.spec.js app/**/*.spec.js",
 		"eslint": "eslint app",
 
 		"test": "npm run eslint && npm run coverage"
