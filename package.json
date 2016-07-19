@@ -1,6 +1,7 @@
 {
 	"author": "Matthew Jackson <mwj8410@gmail.com>",
 	"dependencies": {
+	  "lodash": "4.13.1"
 	},
 	"description": "Provides base functionality for future project.",
 	"devDependencies": {
