@@ -1,0 +1,1 @@
+var tree={"files":["package.json"],"dirs":{"app":{"files":["app.js","app.spec.js"],"dirs":{"classes":{"files":["MapJunction.js","MapJunction.spec.js","MapNode.js","MapNode.spec.js"]},"modules":{"dirs":{"map":{"files":["map.js","map.spec.js"]}}}}}}};

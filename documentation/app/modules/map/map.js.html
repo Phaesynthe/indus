@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>map.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../../doc-style.css" />
+  <script src="../../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../../";
+    var thisFile = "app/modules/map/map.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>map.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-1" id="line-1" data-line="1"></a>  <span class="hljs-meta">'use strict'</span>;
+<a class="line-num" href="#line-2" id="line-2" data-line="2"></a>  
+<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  <span class="hljs-keyword">const</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash'</span>);
+<a class="line-num" href="#line-4" id="line-4" data-line="4"></a>  <span class="hljs-keyword">const</span> MapNode = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../classes/MapNode'</span>);
+<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>  <span class="hljs-keyword">const</span> MapJunction = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../classes/MapJunction'</span>);
+<a class="line-num" href="#line-6" id="line-6" data-line="6"></a>  
+<a class="line-num" href="#line-7" id="line-7" data-line="7"></a>  <span class="hljs-built_in">module</span>.exports = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<a class="line-num" href="#line-8" id="line-8" data-line="8"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>The map is constructed of nodes that are connected by junctions
+This will initially be used to explor the structure of these entities</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  
+<a class="line-num" href="#line-11" id="line-11" data-line="11"></a>    <span class="hljs-keyword">var</span> nodes = [];
+<a class="line-num" href="#line-12" id="line-12" data-line="12"></a>    <span class="hljs-keyword">var</span> junctions = [];
+<a class="line-num" href="#line-13" id="line-13" data-line="13"></a>  
+<a class="line-num" href="#line-14" id="line-14" data-line="14"></a>    <span class="hljs-keyword">return</span> {
+<a class="line-num" href="#line-15" id="line-15" data-line="15"></a>  
+<a class="line-num" href="#line-16" id="line-16" data-line="16"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Used to retrieve a single junction by Id.</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(string)</span>
+<span>junctionId unique identifier for the node being searched for.
+</span>
+</div>
+<div class="dox_tag_title">Returns</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name"></span>
+<span>(object) the node value or undefined
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-21" id="line-21" data-line="21"></a>      getJunctionById (junctionId) {
+<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>        <span class="hljs-keyword">return</span> _(junctions).filter({ id: junctionId }).value()[<span class="hljs-number">0</span>];
+<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>      },
+<a class="line-num" href="#line-24" id="line-24" data-line="24"></a>  
+<a class="line-num" href="#line-25" id="line-25" data-line="25"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Used to retrieve a single node by Id.</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(string)</span>
+<span>nodeId unique identifier for the node being searched for.
+</span>
+</div>
+<div class="dox_tag_title">Returns</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name"></span>
+<span>(object) the node value or undefined
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-30" id="line-30" data-line="30"></a>      getNode (nodeId) {
+<a class="line-num" href="#line-31" id="line-31" data-line="31"></a>        <span class="hljs-keyword">return</span> _(nodes).filter({ id: nodeId }).value()[<span class="hljs-number">0</span>];
+<a class="line-num" href="#line-32" id="line-32" data-line="32"></a>      },
+<a class="line-num" href="#line-33" id="line-33" data-line="33"></a>  
+<a class="line-num" href="#line-34" id="line-34" data-line="34"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Accepts input data and creates a corresponding Junction</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(string)</span>
+<span>nodeId unique identifier for the node being searched for.
+</span>
+</div>
+<div class="dox_tag_title">Returns</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name"></span>
+<span>(object) the node value or undefined
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-39" id="line-39" data-line="39"></a>      loadJunction (junctionData) {
+<a class="line-num" href="#line-40" id="line-40" data-line="40"></a>        junctions.push( <span class="hljs-keyword">new</span> MapJunction (junctionData) );
+<a class="line-num" href="#line-41" id="line-41" data-line="41"></a>      },
+<a class="line-num" href="#line-42" id="line-42" data-line="42"></a>  
+<a class="line-num" href="#line-43" id="line-43" data-line="43"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Accepts input data and creates a corresponding Node</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(string)</span>
+<span>nodeId unique identifier for the node being searched for.
+</span>
+</div>
+<div class="dox_tag_title">Returns</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name"></span>
+<span>(object) the node value or undefined
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-48" id="line-48" data-line="48"></a>      loadNode (nodeData) {
+<a class="line-num" href="#line-49" id="line-49" data-line="49"></a>        nodes.push( <span class="hljs-keyword">new</span> MapNode (nodeData) );
+<a class="line-num" href="#line-50" id="line-50" data-line="50"></a>      }
+<a class="line-num" href="#line-51" id="line-51" data-line="51"></a>    };
+<a class="line-num" href="#line-52" id="line-52" data-line="52"></a>  
+<a class="line-num" href="#line-53" id="line-53" data-line="53"></a>  })();
+<a class="line-num" href="#line-54" id="line-54" data-line="54"></a>  
+<a class="line-num" href="#line-55" id="line-55" data-line="55"></a>  </pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

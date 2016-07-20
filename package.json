@@ -1,10 +1,11 @@
 {
-	"author": "Matthew Jackson <mwj8410@gmail.com>",
-	"dependencies": {
-	  "lodash": "4.13.1"
+  "author": "Matthew Jackson <mwj8410@gmail.com>",
+  "dependencies": {
+    "lodash": "4.13.1"
 	},
 	"description": "Provides base functionality for future project.",
 	"devDependencies": {
+	  "docker": "1.0.0",
 		"eslint": "2.11.1",
 		"expect": "^1.14.0",
 		"istanbul": "^0.4.2",
@@ -17,9 +18,9 @@
 		"url" : "https://github.com/Phaesynthe/indus.git"
 	},
 	"scripts": {
-	  "coverage": "istanbul cover _mocha app/*.spec.js app/**/*.spec.js",
-		"eslint": "eslint app",
-
+	  "doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,*.md",
+    "coverage": "istanbul cover _mocha app/*.spec.js app/**/*.spec.js app/**/**/*.spec.js",
+    "eslint": "eslint app",
 		"test": "npm run eslint && npm run coverage"
 	},
 	"version": "0.0.0"

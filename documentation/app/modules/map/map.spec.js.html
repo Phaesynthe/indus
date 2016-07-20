@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>map.spec.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../../doc-style.css" />
+  <script src="../../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../../";
+    var thisFile = "app/modules/map/map.spec.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>map.spec.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-1" id="line-1" data-line="1"></a>  <span class="hljs-meta">'use strict'</span>;
+<a class="line-num" href="#line-2" id="line-2" data-line="2"></a>  
+<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  <span class="hljs-keyword">const</span> expect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'expect'</span>);
+<a class="line-num" href="#line-4" id="line-4" data-line="4"></a>  <span class="hljs-keyword">const</span> map = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./map'</span>);
+<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>const proxyquire = require('proxyquire').noCallThru();
+const sinon = require('sinon');</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-7" id="line-7" data-line="7"></a>  <span class="hljs-keyword">var</span> fixture = { id: <span class="hljs-string">'fake_id'</span> };
+<a class="line-num" href="#line-8" id="line-8" data-line="8"></a>  
+<a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  describe(<span class="hljs-string">'map'</span>, () =&gt; {
+<a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  
+<a class="line-num" href="#line-11" id="line-11" data-line="11"></a>    it(<span class="hljs-string">'exists'</span>, () =&gt; {
+<a class="line-num" href="#line-12" id="line-12" data-line="12"></a>      expect(<span class="hljs-keyword">typeof</span> map).toBe(<span class="hljs-string">'object'</span>);
+<a class="line-num" href="#line-13" id="line-13" data-line="13"></a>    });
+<a class="line-num" href="#line-14" id="line-14" data-line="14"></a>  
+<a class="line-num" href="#line-15" id="line-15" data-line="15"></a>    it(<span class="hljs-string">'exposes a method for loading map nodes'</span>, () =&gt; {
+<a class="line-num" href="#line-16" id="line-16" data-line="16"></a>      expect(<span class="hljs-keyword">typeof</span> map.loadNode).toBe(<span class="hljs-string">'function'</span>);
+<a class="line-num" href="#line-17" id="line-17" data-line="17"></a>    });
+<a class="line-num" href="#line-18" id="line-18" data-line="18"></a>  
+<a class="line-num" href="#line-19" id="line-19" data-line="19"></a>    it(<span class="hljs-string">'exposes a method for retrieving map nodes'</span>, () =&gt; {
+<a class="line-num" href="#line-20" id="line-20" data-line="20"></a>      expect(<span class="hljs-keyword">typeof</span> map.getNode).toBe(<span class="hljs-string">'function'</span>);
+<a class="line-num" href="#line-21" id="line-21" data-line="21"></a>    });
+<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>  
+<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>    it(<span class="hljs-string">'imports a map junction correctly'</span>, () =&gt; {
+<a class="line-num" href="#line-24" id="line-24" data-line="24"></a>      map.loadJunction(fixture);
+<a class="line-num" href="#line-25" id="line-25" data-line="25"></a>      expect(map.getJunctionById(fixture.id).id).toBe(fixture.id);
+<a class="line-num" href="#line-26" id="line-26" data-line="26"></a>    });
+<a class="line-num" href="#line-27" id="line-27" data-line="27"></a>  
+<a class="line-num" href="#line-28" id="line-28" data-line="28"></a>    it(<span class="hljs-string">'imports a map node correctly'</span>, () =&gt; {
+<a class="line-num" href="#line-29" id="line-29" data-line="29"></a>      map.loadNode(fixture);
+<a class="line-num" href="#line-30" id="line-30" data-line="30"></a>      expect(map.getNode(fixture.id).id).toBe(fixture.id);
+<a class="line-num" href="#line-31" id="line-31" data-line="31"></a>    });
+<a class="line-num" href="#line-32" id="line-32" data-line="32"></a>  
+<a class="line-num" href="#line-33" id="line-33" data-line="33"></a>  });
+<a class="line-num" href="#line-34" id="line-34" data-line="34"></a>  
+<a class="line-num" href="#line-35" id="line-35" data-line="35"></a>  </pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
