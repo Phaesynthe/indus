@@ -2,7 +2,11 @@
 
 class MapJunction {
   constructor (junctionData) {
-    this.id = junctionData.id;
+    if (typeof junctionData != 'object') {
+      junctionData = {};
+    }
+    this.id = junctionData.id || '';
+    this.connections = junctionData.connections || [];
   }
 }
 

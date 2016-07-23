@@ -1,33 +1,65 @@
+/* global before */
 'use strict';
 
 const expect = require('expect');
-const map = require('./map');
-// const proxyquire = require('proxyquire').noCallThru();
-// const sinon = require('sinon');
-var fixture = { id: 'fake_id' };
-
+const Map = require('./map');
 describe('map', () => {
 
-  it('exists', () => {
-    expect(typeof map).toBe('object');
+  describe('load operations', () => {
+    var fixture = { id: 'fake_id' };
+    var map;
+
+    before(() => {
+      map = new Map();
+    });
+
+    it('imports a map junction correctly', () => {
+      map.loadJunction(fixture);
+      expect(map.getJunctionById(fixture.id).id).toBe(fixture.id);
+    });
+
+    it('imports a map node correctly', () => {
+      map.loadNode(fixture);
+      expect(map.getNode(fixture.id).id).toBe(fixture.id);
+    });
+
   });
 
-  it('exposes a method for loading map nodes', () => {
-    expect(typeof map.loadNode).toBe('function');
-  });
+  describe('retrieval operations', () => {
+    var map = new Map();
+    var nodeFixtures = [
+      {
+        id: 'fake_id_1'
+      },
+      {
+        id: 'fake_id_2'
+      }
+    ];
+    var junctionFixtures = [
+      {
+        connections: [ 'fake_id_1', 'fake_id_2' ]
+      },
+      {
+        connections: [ 'fake_id_3', 'fake_id_2' ]
+      }
+    ];
 
-  it('exposes a method for retrieving map nodes', () => {
-    expect(typeof map.getNode).toBe('function');
-  });
+    before(() => {
+      map.loadNode(nodeFixtures[ 0 ]);
+      map.loadNode(nodeFixtures[ 1 ]);
+      map.loadJunction(junctionFixtures[ 0 ]);
+      map.loadJunction(junctionFixtures[ 1 ]);
+    });
 
-  it('imports a map junction correctly', () => {
-    map.loadJunction(fixture);
-    expect(map.getJunctionById(fixture.id).id).toBe(fixture.id);
-  });
+    // it('retrieves junctions by nodeId', () => {
+    //   var set = map.getJunctionsByNodeId('fake_id_1');
+    //   expect(set.length).toBe(1);
+    // });
 
-  it('imports a map node correctly', () => {
-    map.loadNode(fixture);
-    expect(map.getNode(fixture.id).id).toBe(fixture.id);
+  // //   it('retrieves nodes by junctionId', () => {
+
+  // //   });
+
   });
 
 });
