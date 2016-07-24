@@ -26,7 +26,7 @@ class Map {
    * @param (string) junctionId unique identifier for the node being searched for.
    * @return (array) set of junctions that include the indicated nodeId as a connection.
    **/
-  getJunctionByNodeId (nodeId) {
+  getJunctionsByNodeId (nodeId) {
     return _(this.junctions).filter(function (item) { return item.connected.includes(nodeId); }).value();
   }
 
