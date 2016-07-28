@@ -19,7 +19,7 @@
 		"url" : "https://github.com/Phaesynthe/indus.git"
 	},
 	"scripts": {
-	  "doc": "./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,*.md",
+	  "doc": "./node_modules/.bin/docker -o code_documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,*.md",
     "coverage": "istanbul cover _mocha app/*.spec.js app/**/*.spec.js app/**/**/*.spec.js",
     "eslint": "eslint app",
 		"test": "npm run eslint && npm run coverage"
