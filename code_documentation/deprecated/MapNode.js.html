@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>app.js</title>
+  <title>MapNode.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
     var relativeDir = "../";
-    var thisFile = "app/app.js";
+    var thisFile = "deprecated/MapNode.js";
     var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
@@ -32,7 +32,7 @@
     
       <tr>
         <td class="docs">
-          <h1>app.js</h1>
+          <h1>MapNode.js</h1>
         </td>
         <td class="code highlight"></td>
       </tr>
@@ -46,15 +46,17 @@
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><a class="line-num" href="#line-1" id="line-1" data-line="1"></a>  <span class="hljs-built_in">module</span>.exports = {
-<a class="line-num" href="#line-2" id="line-2" data-line="2"></a>    test: <span class="hljs-string">'value'</span>,
-<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  
-<a class="line-num" href="#line-4" id="line-4" data-line="4"></a>    mix (val1, val2) {
-<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>      <span class="hljs-keyword">return</span> (val1 + val2) / <span class="hljs-number">2</span>;
+          <pre class="javascript"><a class="line-num" href="#line-1" id="line-1" data-line="1"></a>  <span class="hljs-meta">'use strict'</span>;
+<a class="line-num" href="#line-2" id="line-2" data-line="2"></a>  
+<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MapNode</span> </span>{
+<a class="line-num" href="#line-4" id="line-4" data-line="4"></a>    <span class="hljs-keyword">constructor</span> (nodeData) {
+<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>      <span class="hljs-keyword">this</span>.id = nodeData.id;
 <a class="line-num" href="#line-6" id="line-6" data-line="6"></a>    }
-<a class="line-num" href="#line-7" id="line-7" data-line="7"></a>  };
+<a class="line-num" href="#line-7" id="line-7" data-line="7"></a>  }
 <a class="line-num" href="#line-8" id="line-8" data-line="8"></a>  
-<a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  </pre>
+<a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  <span class="hljs-built_in">module</span>.exports = MapNode;
+<a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  
+<a class="line-num" href="#line-11" id="line-11" data-line="11"></a>  </pre>
         </td>
       </tr>
     

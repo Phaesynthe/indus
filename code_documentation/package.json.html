@@ -57,24 +57,25 @@
 <a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  		<span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"2.11.1"</span>,
 <a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  		<span class="hljs-attr">"expect"</span>: <span class="hljs-string">"^1.14.0"</span>,
 <a class="line-num" href="#line-11" id="line-11" data-line="11"></a>  		<span class="hljs-attr">"istanbul"</span>: <span class="hljs-string">"^0.4.2"</span>,
-<a class="line-num" href="#line-12" id="line-12" data-line="12"></a>  		<span class="hljs-attr">"mocha"</span>: <span class="hljs-string">"^2.4.5"</span>
-<a class="line-num" href="#line-13" id="line-13" data-line="13"></a>  	},
-<a class="line-num" href="#line-14" id="line-14" data-line="14"></a>  	<span class="hljs-attr">"main"</span>: <span class="hljs-string">""</span>,
-<a class="line-num" href="#line-15" id="line-15" data-line="15"></a>  	<span class="hljs-attr">"name"</span>: <span class="hljs-string">"Indus"</span>,
-<a class="line-num" href="#line-16" id="line-16" data-line="16"></a>  	<span class="hljs-attr">"repository"</span>: {
-<a class="line-num" href="#line-17" id="line-17" data-line="17"></a>  		<span class="hljs-attr">"type"</span> : <span class="hljs-string">"git"</span>,
-<a class="line-num" href="#line-18" id="line-18" data-line="18"></a>  		<span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://github.com/Phaesynthe/indus.git"</span>
-<a class="line-num" href="#line-19" id="line-19" data-line="19"></a>  	},
-<a class="line-num" href="#line-20" id="line-20" data-line="20"></a>  	<span class="hljs-attr">"scripts"</span>: {
-<a class="line-num" href="#line-21" id="line-21" data-line="21"></a>  	  <span class="hljs-attr">"doc"</span>: <span class="hljs-string">"./node_modules/.bin/docker -o documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,*.md"</span>,
-<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>      <span class="hljs-attr">"coverage"</span>: <span class="hljs-string">"istanbul cover _mocha app/*.spec.js app/**/*.spec.js app/**/**/*.spec.js"</span>,
-<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>      <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"eslint app"</span>,
-<a class="line-num" href="#line-24" id="line-24" data-line="24"></a>  		<span class="hljs-attr">"test"</span>: <span class="hljs-string">"npm run eslint &amp;&amp; npm run coverage"</span>
-<a class="line-num" href="#line-25" id="line-25" data-line="25"></a>  	},
-<a class="line-num" href="#line-26" id="line-26" data-line="26"></a>  	<span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0"</span>
-<a class="line-num" href="#line-27" id="line-27" data-line="27"></a>  }
-<a class="line-num" href="#line-28" id="line-28" data-line="28"></a>  
-<a class="line-num" href="#line-29" id="line-29" data-line="29"></a>  </pre>
+<a class="line-num" href="#line-12" id="line-12" data-line="12"></a>  		<span class="hljs-attr">"mocha"</span>: <span class="hljs-string">"^2.4.5"</span>,
+<a class="line-num" href="#line-13" id="line-13" data-line="13"></a>  		<span class="hljs-attr">"Phae_guidelines"</span>: <span class="hljs-string">"https://github.com/Phaesynthe/Phae_guidelines.git"</span>
+<a class="line-num" href="#line-14" id="line-14" data-line="14"></a>  	},
+<a class="line-num" href="#line-15" id="line-15" data-line="15"></a>  	<span class="hljs-attr">"main"</span>: <span class="hljs-string">""</span>,
+<a class="line-num" href="#line-16" id="line-16" data-line="16"></a>  	<span class="hljs-attr">"name"</span>: <span class="hljs-string">"Indus"</span>,
+<a class="line-num" href="#line-17" id="line-17" data-line="17"></a>  	<span class="hljs-attr">"repository"</span>: {
+<a class="line-num" href="#line-18" id="line-18" data-line="18"></a>  		<span class="hljs-attr">"type"</span> : <span class="hljs-string">"git"</span>,
+<a class="line-num" href="#line-19" id="line-19" data-line="19"></a>  		<span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://github.com/Phaesynthe/indus.git"</span>
+<a class="line-num" href="#line-20" id="line-20" data-line="20"></a>  	},
+<a class="line-num" href="#line-21" id="line-21" data-line="21"></a>  	<span class="hljs-attr">"scripts"</span>: {
+<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>  	  <span class="hljs-attr">"doc"</span>: <span class="hljs-string">"./node_modules/.bin/docker -o code_documentation -I -n -x node_modules,coverage,design_docs,documentation,testsHelpers,*.md"</span>,
+<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>      <span class="hljs-attr">"coverage"</span>: <span class="hljs-string">"istanbul cover _mocha app/*.spec.js app/**/*.spec.js app/**/**/*.spec.js"</span>,
+<a class="line-num" href="#line-24" id="line-24" data-line="24"></a>      <span class="hljs-attr">"eslint"</span>: <span class="hljs-string">"eslint app"</span>,
+<a class="line-num" href="#line-25" id="line-25" data-line="25"></a>  		<span class="hljs-attr">"test"</span>: <span class="hljs-string">"npm run eslint &amp;&amp; npm run coverage"</span>
+<a class="line-num" href="#line-26" id="line-26" data-line="26"></a>  	},
+<a class="line-num" href="#line-27" id="line-27" data-line="27"></a>  	<span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0"</span>
+<a class="line-num" href="#line-28" id="line-28" data-line="28"></a>  }
+<a class="line-num" href="#line-29" id="line-29" data-line="29"></a>  
+<a class="line-num" href="#line-30" id="line-30" data-line="30"></a>  </pre>
         </td>
       </tr>
     

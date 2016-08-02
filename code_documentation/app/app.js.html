@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>app.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../";
+    var thisFile = "app/app.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>app.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+<p>'use strict';</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-2" id="line-2" data-line="2"></a>  
+<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<p>Services</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-4" id="line-4" data-line="4"></a>  <span class="hljs-keyword">const</span> ApplicationEvents = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./services/ApplicationEvents/ApplicationEvents'</span>);
+<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>  
+<a class="line-num" href="#line-6" id="line-6" data-line="6"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<p>Modules
+const Map = require('modules/map');</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-8" id="line-8" data-line="8"></a>  
+<a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
+</div>
+<p>var map = new Map();</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-11" id="line-11" data-line="11"></a>    <span class="hljs-keyword">var</span> events = <span class="hljs-keyword">new</span> ApplicationEvents();
+<a class="line-num" href="#line-12" id="line-12" data-line="12"></a>  
+<a class="line-num" href="#line-13" id="line-13" data-line="13"></a>    events.registerEvent(<span class="hljs-string">'tic'</span>, () =&gt; {
+<a class="line-num" href="#line-14" id="line-14" data-line="14"></a>      process.stdout.write(<span class="hljs-string">'Application fire all tick actions'</span>);
+<a class="line-num" href="#line-15" id="line-15" data-line="15"></a>    });
+<a class="line-num" href="#line-16" id="line-16" data-line="16"></a>  
+<a class="line-num" href="#line-17" id="line-17" data-line="17"></a>    events.registerEvent(<span class="hljs-string">'saveState'</span>, () =&gt; {
+<a class="line-num" href="#line-18" id="line-18" data-line="18"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
+</div>
+<p>Convert all structures to a file savable state and return to the initiating block</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-19" id="line-19" data-line="19"></a>      process.stdout.write(<span class="hljs-string">'Application fire all serialize actions'</span>);
+<a class="line-num" href="#line-20" id="line-20" data-line="20"></a>    });
+<a class="line-num" href="#line-21" id="line-21" data-line="21"></a>  
+<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>  })();
+<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>  
+<a class="line-num" href="#line-24" id="line-24" data-line="24"></a>  </pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>

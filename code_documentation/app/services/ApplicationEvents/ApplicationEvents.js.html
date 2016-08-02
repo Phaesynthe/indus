@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApplicationEvents.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../../doc-style.css" />
+  <script src="../../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../../";
+    var thisFile = "app/services/ApplicationEvents/ApplicationEvents.js";
+    var defaultSidebar = true;
+  </script>
+  <script src="../../../doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+    
+      <tr>
+        <td class="docs">
+          <h1>ApplicationEvents.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+    
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-1" id="line-1" data-line="1"></a>  <span class="hljs-meta">'use strict'</span>;
+<a class="line-num" href="#line-2" id="line-2" data-line="2"></a>  
+<a class="line-num" href="#line-3" id="line-3" data-line="3"></a>  <span class="hljs-keyword">const</span> events = <span class="hljs-built_in">require</span>(<span class="hljs-string">'events'</span>);
+<a class="line-num" href="#line-4" id="line-4" data-line="4"></a>  
+<a class="line-num" href="#line-5" id="line-5" data-line="5"></a>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ApplicationEvents</span> </span>{
+<a class="line-num" href="#line-6" id="line-6" data-line="6"></a>    <span class="hljs-keyword">constructor</span> () {
+<a class="line-num" href="#line-7" id="line-7" data-line="7"></a>      <span class="hljs-keyword">this</span>.eventEmitter = <span class="hljs-keyword">new</span> events.EventEmitter();
+<a class="line-num" href="#line-8" id="line-8" data-line="8"></a>    }
+<a class="line-num" href="#line-9" id="line-9" data-line="9"></a>  
+<a class="line-num" href="#line-10" id="line-10" data-line="10"></a>  </pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>registerEvent()</p>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(string)</span>
+<span>name The string key that identifies the event.
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">(function)</span>
+<span>handler The function that runs when the named event fires.
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><a class="line-num" href="#line-16" id="line-16" data-line="16"></a>    registerEvent (name, handler) {
+<a class="line-num" href="#line-17" id="line-17" data-line="17"></a>      <span class="hljs-keyword">this</span>.eventEmitter.on(name, handler);
+<a class="line-num" href="#line-18" id="line-18" data-line="18"></a>    }
+<a class="line-num" href="#line-19" id="line-19" data-line="19"></a>  }
+<a class="line-num" href="#line-20" id="line-20" data-line="20"></a>  
+<a class="line-num" href="#line-21" id="line-21" data-line="21"></a>  <span class="hljs-built_in">module</span>.exports = ApplicationEvents;
+<a class="line-num" href="#line-22" id="line-22" data-line="22"></a>  
+<a class="line-num" href="#line-23" id="line-23" data-line="23"></a>  </pre>
+        </td>
+      </tr>
+    
+  </tbody>
+</table>
+
+  </div>
+</body>
+</html>
